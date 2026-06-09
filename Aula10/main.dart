@@ -8,5 +8,7 @@ void main(){
     Aluno aluno = Aluno("Aluno ${i + 1}", Random().nextInt(5) + 1, Random().nextDouble() * 10, Random().nextDouble() * 10, Random().nextDouble() * 10);
     turma.adicionarAluno(aluno);
   turma.mostrarAlunos();
+    
   }
+  
 }
