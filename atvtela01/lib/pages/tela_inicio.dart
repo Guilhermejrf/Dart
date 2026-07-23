@@ -11,24 +11,88 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            Image.asset(
-              'images/Reaver-Phantom.webp',
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            Image.asset(
-              'images/Elderflame-Vandal.webp',
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ],
-        ),
+  padding: const EdgeInsets.all(16),
+  child: Column(
+    children: [
+    Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+    
+      CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage("images/VaStore.png"),
+              ),
+              const SizedBox(width: 15,),
+
+              Icon(
+                Icons.menu,
+                size: 35,
+              )
+    ],
       ),
-    );
+      
+              const SizedBox(height: 16),
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            'images/Reaver-Phantom.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/Elderflame-Vandal.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
+
+      const SizedBox(height: 20),
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            'images/Glitchpop-Vandal.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/Oni-Phantom.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
+
+      const SizedBox(height: 20),
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            'images/Spectrum-Phantom.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'images/Sentinels-Of-Light-Vandal.webp',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
+    ],
+  ),
+),
+);
   }
 }
