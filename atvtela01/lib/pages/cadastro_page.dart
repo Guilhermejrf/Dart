@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tela_inicio.dart';
+import 'tela_termos.dart';
 
 class CadastroPage extends StatefulWidget {
   const CadastroPage({super.key});
@@ -96,8 +97,7 @@ class _CadastroPageState extends State<CadastroPage> {
                 children: [
                   Checkbox(
                     activeColor: Colors.blue,
-                    shape: CircleBorder(
-                    ),
+                    shape: const CircleBorder(),
                     value: aceitouTermos,
                     onChanged: (value) {
                       setState(() {
@@ -105,10 +105,23 @@ class _CadastroPageState extends State<CadastroPage> {
                       });
                     },
                   ),
-                  const Text("Aceito os termos de uso"),
-                ],
-              ),
-            ],
+                  const Text("Aceito os "),
+                  TextButton(
+                    onPressed: () {
+                      onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TelaTermos(),
+                ),
+              );
+               };
+                    },
+                    child: const Text("termos de uso"),
+                  ),
+               ],
+             ),
+            ]
           ),
         ),
       ),
