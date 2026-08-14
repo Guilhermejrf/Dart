@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:.dart';
+import 'package:tdd_aula/tdd_senha.dart';
 
 void main() {
     group('| Validador de Senha |', () {
