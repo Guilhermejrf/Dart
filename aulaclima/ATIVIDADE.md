@@ -39,7 +39,9 @@ As coordenadas usadas sao de Recife.
 - Etapa 1: feita.
 - Etapa 2: feita; o pacote `http` foi adicionado e resolvido no lockfile.
 - Etapa 3: feita no codigo.
-- Etapas 4, 5 e 6: ainda nao feitas.
+- Etapa 4: feita em `integration_test/weather_api_test.dart`.
+- Etapa 5: feita em `integration_test/weather_app_test.dart`.
+- Etapa 6: feita com teste de URL incorreta e retorno da URL correta no app.
 
 ## Perguntas para responder ao final
 
@@ -48,3 +50,19 @@ As coordenadas usadas sao de Recife.
 3. O que aconteceu quando a URL da API foi alterada?
 4. Por que nao podemos testar uma temperatura fixa, como 29 graus Celsius?
 5. Qual a importancia de testar a comunicacao entre o aplicativo e uma API?
+
+## Respostas finais
+
+1. Teste de integracao e um teste que verifica se partes diferentes do sistema funcionam juntas.
+2. Nesta atividade foram integrados o aplicativo Flutter, o codigo Dart, o pacote `http`, a API Open-Meteo, a resposta JSON e a tela que mostra a temperatura.
+3. Quando a URL da API foi alterada para uma URL errada, a consulta falhou e o aplicativo mostrou a mensagem "Erro ao buscar temperatura.".
+4. Nao podemos testar uma temperatura fixa porque a temperatura muda com o tempo. O correto e testar se chegou algum valor e se esse valor e numerico.
+5. Testar a comunicacao com a API e importante para saber se o aplicativo consegue buscar dados reais e tratar erros quando a consulta nao funciona.
+
+## Como executar os testes
+
+```text
+flutter test
+flutter test integration_test/weather_api_test.dart
+flutter test integration_test/weather_app_test.dart
+```

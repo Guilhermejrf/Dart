@@ -1,10 +1,11 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
+import '../services/weather_service.dart';
 
 class WeatherPage extends StatefulWidget {
-  const WeatherPage({super.key});
+  const WeatherPage({super.key, this.weatherService = const WeatherService()});
+
+  final WeatherService weatherService;
 
   @override
   State<WeatherPage> createState() => _WeatherPageState();
@@ -12,10 +13,6 @@ class WeatherPage extends StatefulWidget {
 
 class _WeatherPageState extends State<WeatherPage> {
   static const String city = 'Recife';
-  static final Uri weatherUrl = Uri.parse(
-    'chavedaapi'
-    'latitude=-8.05&longitude=-34.88&current=temperature_2m',
-  );
 
   bool _isLoading = false;
   String _message = 'Clique no bot\u00E3o para buscar a temperatura.';
@@ -27,19 +24,7 @@ class _WeatherPageState extends State<WeatherPage> {
     });
 
     try {
-      final response = await http.get(weatherUrl);
-
-      if (response.statusCode != 200) {
-        throw Exception('Resposta inv\u00E1lida da API.');
-      }
-
-      final data = jsonDecode(response.body) as Map<String, dynamic>;
-      final current = data['current'] as Map<String, dynamic>?;
-      final temperature = current?['temperature_2m'];
-
-      if (temperature is! num) {
-        throw Exception('Temperatura n\u00E3o encontrada.');
-      }
+      final temperature = await widget.weatherService.fetchTemperature();
 
       if (!mounted) return;
 
