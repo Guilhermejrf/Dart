@@ -42,6 +42,7 @@ As coordenadas usadas sao de Recife.
 - Etapa 4: feita em `integration_test/weather_api_test.dart`.
 - Etapa 5: feita em `integration_test/weather_app_test.dart`.
 - Etapa 6: feita com teste de URL incorreta e retorno da URL correta no app.
+- Observacao: a chamada da API ficou junto da tela em `lib/pages/weather_page.dart`, para manter o projeto simples.
 
 ## Perguntas para responder ao final
 
